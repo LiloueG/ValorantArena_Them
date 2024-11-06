@@ -51,7 +51,7 @@ get_header();
                             <input type="password" name="password_confirm" id="password_confirm" required>
                         </p>
 
-                        <p>
+                        <p style="display:flex">
                             <input type="checkbox" name="privacy_policy" id="privacy_policy" value="1" required>
                             <label for="privacy_policy">J'accepte la <a href="<?php echo site_url('/politique-de-confidentialite'); ?>" target="_blank">politique de confidentialité</a></label>
                         </p>
@@ -62,7 +62,7 @@ get_header();
                     </form>
                 <?php
                 } else {
-                    echo '<p>Vous êtes déjà connecté. <a href="' . home_url() . '">Retour à l\'accueil</a>.</p>';
+                    echo '<p>Vous êtes déjà connecté.</p><a href="' . home_url() . '">Retour à l\'accueil</a>';
                 }
                 ?>
             </div>

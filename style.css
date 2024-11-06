@@ -217,6 +217,11 @@ header {
     z-index: -1;
 }
 
+
+.hero-1 {
+    margin-bottom: 140px    ;
+}
+
 .hero h1 {
     font-size: 3em;
     color: #ff4654;
@@ -562,6 +567,7 @@ header {
     gap: 30px;
     justify-content: center;
     padding: 50px 20px;
+    
   }
   
   .membre {
@@ -569,7 +575,7 @@ header {
     gap: 40px;
     align-items: center;
     background-color: #0a0a0a;
-    /* width: 500px; */
+    box-shadow: 0 0 20px #ff4654;
     color: #ffffff;
     border-radius: 10px;
     padding: 10px 20px;
@@ -582,9 +588,11 @@ header {
 
   }
   
-  .membre h1 {
+  .membre a {
     font-size: 22px;
     color: #ff3c3c;
+    text-decoration: none;
+    font-weight: bold;
   }
 
 
@@ -640,34 +648,38 @@ header {
 
 
 
-  .edit-profile-container {
+ /* Profile Edit Section */
+.edit-profile-container {
     max-width: 400px;
-    margin-top: 100px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 20px;
     background: #111823;
     color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px #ff4654;
     font-family: 'Montserrat', sans-serif;
-}
-
-.edit-profile-container h1 {
+  }
+  
+  .edit-profile-container h1 {
     text-align: center;
-    font-family: 'ValorantFont', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #FF4654;
-}
-
-
-.edit-profile-container label {
+    font-weight: bold;
+    font-size: 18px ;
+  }
+  
+  .edit-profile-container label {
     display: block;
     margin-top: 20px;
     font-weight: bold;
-}
-
-.edit-profile-container input[type="text"],
-.edit-profile-container input[type="email"],
-.edit-profile-container input[type="password"] {
+  }
+  
+  .edit-profile-container input[type="text"],
+  .edit-profile-container input[type="email"],
+  .edit-profile-container input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -675,9 +687,9 @@ header {
     border-radius: 5px;
     background: #333;
     color: #fff;
-}
-
-.edit-profile-container input[type="submit"] {
+  }
+  
+  .edit-profile-container input[type="submit"] {
     width: 100%;
     padding: 15px;
     background: #FF4654;
@@ -686,50 +698,96 @@ header {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-}
-
-.edit-profile-container input[type="submit"]:hover {
+  }
+  
+  .edit-profile-container input[type="submit"]:hover {
     background: #d73948;
-}
+  }
+
+  input[type="submit"] {
+    margin-top: 20px;
+    align-items: center;
+    color: #fff
+
+  }
+
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body {
+      padding: 20px;
+    }
+
+    .edit-profile-container {
+      margin: 20px auto;
+    }
+
+
+    .equipes {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .membre {
+      width: 100%;
+    }
+  }
 
 
 
 
-
-
-/* Registration Page Styles */
-.registration-container {
-    max-width: 400px;
-    margin: 0 auto;
+/* Container styling */
+#primary.content-area {
+    max-width: 900px;
+    margin: 100px auto;
     padding: 30px;
-    background-color: #0a0a0a;
-    color: #ff3c3c;
+    color: #ff4654;
     text-align: center;
     border-radius: 10px;
     box-sizing: border-box;
-  }
-  
-  .registration-container h1 {
+
+}
+
+/* Title styling */
+.entry-header h1.entry-title {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
-  }
-  
-  .registration-container input[type="text"],
-  .registration-container input[type="email"],
-  .registration-container input[type="password"] {
+}
+
+/* Input fields styling */
+.entry-content label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 16px;
+
+}
+
+.entry-content input[type="text"],
+.entry-content input[type="email"],
+.entry-content input[type="password"],
+.entry-content input[type="file"],
+.entry-content select {
     width: 100%;
     padding: 15px;
     margin-bottom: 15px;
-    border: 2px solid #ff3c3c;
+    border: 2px solid #ff4654;
     border-radius: 5px;
     background-color: #1a1a1a;
     color: #ffffff;
     box-sizing: border-box;
-  }
-  
-  .registration-container input[type="submit"] {
-    background-color: #ff3c3c;
+}
+
+/* Checkbox styling */
+.entry-content input[type="checkbox"] {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+
+/* Submit button styling */
+.entry-content input[type="submit"] {
+    background-color: #ff4654;
     color: #ffffff;
     padding: 15px;
     font-size: 18px;
@@ -737,44 +795,318 @@ header {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .registration-container input[type="submit"]:hover {
-    background-color: #ff5757;
-  }
-  
-  .registration-container .social-login {
-    margin: 20px 0;
-  }
-  
-  .registration-container .social-login img {
-    width: 40px;
-    margin: 0 10px;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  
-  .registration-container .social-login img:hover {
-    transform: scale(1.1);
-  }
-  
-  .registration-container .divider {
-    font-size: 16px;
+}
+
+.entry-content input[type="submit"]:hover {
+    background-color: #ff3344;
+}
+
+/* Align privacy policy link */
+.entry-content p {
+    font-size: 14px;
     color: #ffffff;
-    margin: 20px 0;
-  }
-  
+}
+
+/* Styling for form container */
+.entry-content form {
+    margin-top: 20px;
+}
+
+/* Placeholder text styling */
+::placeholder {
+    color: #999;
+    font-family: 'Montserrat', sans-serif;
+}
 
 
 
 
 
 
+.content-area {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 100%;  
+    display: flex;
+    
+    justify-content: center;
+}
+
+.entry-header{
+    visibility: hidden;
+}
+
+.entry-content{
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px 20px;	
+    box-shadow: 0 0 20px #ff4654;
+    width: fit-content;
+    align-items: center;
+
+}
+
+.entry-content a{
+    color: #ff4654;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.site-main{
+    display: flex;
+    align-items: center;
+}
 
 
-  /* Footer */
-.main-footer {
+
+
+
+/* Styles pour la carte de match */
+.matchs {
+    padding: 100px 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.matchs a {
+    color: #FF4654;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.match-card {
+    background-color: #111823;
+    border-radius: 15px;
+    border: 2px solid #FF4654;
+    padding: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 15px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.match-title {
+    font-size: 24px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.match-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-direction: column;
+}
+
+.match-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.match-thumbnail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.match-card .vs-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #FF4654;
+    margin: 10px 0;
+}
+
+.match-content {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.match-start {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FF4654;
+    margin-bottom: 15px;
+}
+
+.join-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.join-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Ajustements pour le conteneur principal des matchs */
+.match-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.match-thumbnail {
+    margin-bottom: 10px;
+}
+
+/* Bouton "Rejoindre" */
+.match-card .join-button {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.match-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    flex-direction: column;
+}
+
+.match-info div {
+    text-align: center;
+}
+
+.match-info .team-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.match-info p {
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.match-info strong {
+    color: #FF4654;
+}
+
+.match-info .team-stats {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Pour le titre "MATCH 1" */
+.match-title {
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+} 
+
+
+
+
+
+/* Container styling */
+#primary.content-area.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    color: #ff4654;
+    text-align: center;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.entry-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Title styling */
+.entry-header h1.entry-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Input fields styling */
+.entry-content label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+
+.entry-content input[type="text"],
+.entry-content input[type="email"],
+.entry-content textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #ff4654;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Submit button styling */
+.entry-content input[type="submit"] {
     background-color: #ff4654;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.entry-content input[type="submit"]:hover {
+    background-color: #ff3344;
+}
+
+/* Align privacy policy link */
+.entry-content p {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* Styling for form container */
+.entry-content form {
+    margin-top: 20px;
+    width: 70%;
+}
+
+/* Placeholder text styling */
+::placeholder {
+    color: #999;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Styling for textarea */
+.entry-content textarea {
+    resize: vertical;
+}
+
+
+
+
+
+
+
+ /* Footer */
+.main-footer {
+    background-color: #ff3366;
     color: #000000;
     padding: 30px 20px;
     text-align: center;
@@ -786,6 +1118,7 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
+    padding-left: 100px;
 }
 
 .footer-logo img {
@@ -846,7 +1179,3 @@ header {
         margin-top: 15px;
     }
 }
-
-
-
-

@@ -2,11 +2,13 @@
 
 <section class="hero">
     <div class="hero-content">
-        <h1 style="font-family: 'ValorantFont', sans-serif;">Bienvenue sur ValorantArena</h1>
-        <p>Affrontez les meilleures équipes et devenez des légendes</p>
+        <div class="hero-1">
+            <h1 style="font-family: 'ValorantFont', sans-serif;">Bienvenue sur ValorantArena</h1>
+            <p>Affrontez les meilleures équipes et devenez des légendes</p>
+        </div>
         <p>Rejoignez ValorantArena, un tournoi 100 % dédié aux passionnés de Valorant</p>
         <div class="hero-buttons">
-            <a href="#inscription" class="btn-primary">Inscrivez-vous</a>
+            <a href="/ValorantArena/creation-de-compte" class="btn-primary">Inscrivez-vous</a>
             <a href="<?php echo wp_login_url(); ?>" class="btn-secondary">Connexion</a>
         </div>
     </div>

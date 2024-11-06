@@ -45,28 +45,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_profile'])) {
 ?>
 
 <div class="edit-profile-container">
-    <h1>Modifier votre profil</h1>
-
-    <form id="edit-profile-form" method="post" action="">
-        <!-- Nom affiché -->
-        <label for="display_name">Nom affiché :</label>
-        <input type="text" name="display_name" id="display_name" value="<?php echo esc_attr($current_user->display_name); ?>" required>
-
-        <!-- Email -->
-        <label for="email">Adresse email :</label>
-        <input type="email" name="email" id="email" value="<?php echo esc_attr($current_user->user_email); ?>" required>
-
-        <!-- Mot de passe -->
-        <label for="password">Nouveau mot de passe :</label>
-        <input type="password" name="password" id="password">
-
-        <!-- Confirmation du mot de passe -->
-        <label for="confirm_password">Confirmer le mot de passe :</label>
-        <input type="password" name="confirm_password" id="confirm_password">
-
-        <?php wp_nonce_field('update_profile_action', 'update_profile_nonce'); ?>
-        <input type="submit" name="update_profile" value="Mettre à jour le profil">
-    </form>
+    <div>
+        <h1>Modifier votre profil</h1>
+        <form id="edit-profile-form" method="post" action="">
+            <!-- Nom affiché -->
+            <label for="display_name">Nom affiché :</label>
+            <input type="text" name="display_name" id="display_name" value="<?php echo esc_attr($current_user->display_name); ?>" required>
+            <!-- Email -->
+            <label for="email">Adresse email :</label>
+            <input type="email" name="email" id="email" value="<?php echo esc_attr($current_user->user_email); ?>" required>
+            <!-- Mot de passe -->
+            <label for="password">Nouveau mot de passe :</label>
+            <input type="password" name="password" id="password">
+            <!-- Confirmation du mot de passe -->
+            <label for="confirm_password">Confirmer le mot de passe :</label>
+            <input type="password" name="confirm_password" id="confirm_password">
+            <?php wp_nonce_field('update_profile_action', 'update_profile_nonce'); ?>
+            <input type="submit" name="update_profile" value="Mettre à jour le profil">
+        </form>
+    </div>
 </div>
 
 <?php get_footer(); ?>
