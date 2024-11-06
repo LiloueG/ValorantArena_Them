@@ -1,0 +1,852 @@
+/*
+Theme Name: ValorantArena_Theme
+Theme URI: https://wordpress.org/themes/valorantarena_theme/
+Author: Liloueg
+Author URI: https://liloueg/
+Description: le thème pour ValoranaArena
+Version: 1.8
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: valorantarena_theme
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-principal, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Block elements default styles */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* Body styles */
+body {
+    line-height: 1;
+}
+
+/* List elements default styles */
+ol, ul {
+    list-style: none;
+}
+
+/* Quote and Blockquote */
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* Table styles */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+
+/* General Styles */
+
+body {
+    background-color: #111823;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    line-height: 1.625;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+
+/* Header Styles for Valorant Arena Website */
+
+/* General header container */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: transparent; /* Mettre le fond transparent */
+    position: absolute; /* Pour que le header soit par-dessus l'image de fond */
+}
+  
+  /* Logo styling */
+  header .logo {
+    width: 60px;
+    height: auto;
+  }
+  
+  /* Navigation styling */
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: #ff4654;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #ffffff;
+  }
+  
+  /* "Sign up" and "Sign in" links for extra emphasis */
+  nav a.signup, nav a.signin {
+    border: 1px solid #ff4654;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  nav a.signup:hover, nav a.signin:hover {
+    background-color: #ff4654;
+    color: #ffffff;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 20px 100px;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 20px;
+    padding-right: 100px;
+  }
+  
+  nav li {
+    list-style: none;
+  }
+
+
+
+
+
+
+/* Hero section */
+.hero-wrapper {
+    background-image: url('<?php echo get_template_directory_uri(); ?>/images/valorant-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh; /* Pour que l'image couvre la hauteur de l'écran */
+    width: 100%; /* Couvre toute la largeur */
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    color: #ffffff;
+    position: absolute; /* Positionnement absolu pour être au-dessus de l'image */
+    width: 100%; /* Pour qu'il occupe toute la largeur de l'écran */
+    z-index: 10; /* Assure-toi que le header reste au-dessus du reste */
+    background: transparent; /* Pas de fond, le fond sera celui de l'image */
+}
+
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    color: #ffffff;
+    z-index: 5; /* Assure-toi que le texte de la section héroïque reste visible */
+}
+
+.hero {
+    position: relative;
+    background-image: url('images/valorant-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    padding: 100px 20px;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajuste l'opacité (0.5) pour plus ou moins foncer */
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: #ff4654;
+}
+
+.hero p {
+    margin: 10px 0;
+}
+
+.hero-buttons .btn {
+    padding: 15px 30px; /* Augmente la taille des boutons */
+    border-radius: 50px; /* Ajoute des coins arrondis pour un look moderne */
+    font-size: 1.1em; /* Augmente légèrement la taille du texte */
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Ajoute une animation de transition */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Ajoute une ombre pour donner du relief */
+    font-weight: bold;
+    
+}
+
+/* Bouton Inscrivez-vous (primaire) */
+.btn-primary {
+    background-color: #ff4654;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #ff4654; /* Change la couleur au survol */
+    box-shadow: 0 6px 20px rgba(255, 79, 102, 0.4); /* Augmente l'ombre au survol */
+}
+
+/* Bouton Connexion (secondaire) */
+.btn-secondary {
+    background-color: transparent;
+    color: #ff4654; /* Change la couleur du texte pour correspondre à l'autre bouton */
+    border: 2px solid #ff4654;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background-color: #ff4654; /* Change la couleur de fond au survol */
+    color: #ffffff; /* Change la couleur du texte au survol */
+    box-shadow: 0 6px 20px rgba(255, 79, 102, 0.4); /* Ajoute une ombre au survol */
+}
+
+.btn a {
+    font-weight: bold;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+}
+
+
+
+
+
+
+
+
+.intense-competition {
+    color: #ffffff;
+    padding: 182px 20px;
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+}
+
+.content-wrapper {
+    max-width: 1200px; /* Limite la largeur totale pour un affichage centré */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espace entre les colonnes */
+}
+
+.text-column {
+    flex: 1; /* Utilisation de la moitié de l'espace */
+    padding-right: 20px;
+    font-family: 'Montserrat', sans-serif; /* Par défaut */
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.image-column {
+    flex: 1; /* Utilisation de la moitié de l'espace */
+}
+
+.image-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Coins légèrement arrondis pour l'image */
+}
+
+
+
+
+.team-creation {
+    background-color: #111823; /* Couleur de fond sombre pour correspondre à celle de l'image */
+    padding: 182px 20px; /* Padding en haut et en bas de 182px, 20px sur les côtés */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.content-wrapper {
+    max-width: 1200px; /* Largeur maximale de la section */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 140px; /* Espace entre l'image et le texte */
+}
+
+.image-column {
+    flex: 1; /* Utilise une moitié de la largeur pour l'image */
+}
+
+.image-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Coins légèrement arrondis */
+}
+
+.text-column {
+    flex: 1; /* Utilise une moitié de la largeur pour le texte */
+    font-family: 'Montserrat', sans-serif; /* Typo par défaut */
+}
+
+.text-column h2 {
+    font-size: 2em;
+    color: #ff4654; /* Rouge pour attirer l'attention */
+    margin-bottom: 20px;
+}
+
+.text-column p {
+    line-height: 1.6;
+    font-size: 1.2em;
+}
+
+
+
+
+
+
+.live-action {
+    background-color: #111823; /* Couleur de fond sombre */
+    padding: 182px 20px; /* Padding en haut et en bas de 182px, 20px sur les côtés */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+.next-challenges {
+    background-color: #111823; /* Couleur de fond sombre */
+    padding: 182px 20px; /* Padding en haut et en bas de 182px, 20px sur les côtés */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+.teams-in-tournament {
+    background-color: #111823; /* Couleur de fond sombre */
+    padding: 182px 20px; /* Padding en haut et en bas de 182px, 20px sur les côtés */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+/* Contact Section Styles */
+.contact-section {
+    color: #ffffff;
+    padding: 50px 100px;
+    text-align: right;
+  }
+  
+  .contact-section h2 {
+    font-size: 24px;
+    color: #ff3c3c;
+    margin-bottom: 15px;
+  }
+  
+  .contact-section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-section .contact-button {
+    background-color: #ff4654;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .contact-section .contact-button:hover {
+    background-color: #ff4654;
+  }
+
+
+
+
+
+
+ /* Team Creation Page Styles */
+
+/* Container styling */
+.creation-equipe-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #0a0a0a;
+    color: #ff4654;
+    text-align: center;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Title styling */
+  .creation-equipe-container h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Input fields styling */
+  .creation-equipe-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 16px;
+  }
+  
+  .creation-equipe-container input[type="text"],
+  .creation-equipe-container input[type="file"],
+  .creation-equipe-container select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #ff4654;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    box-sizing: border-box;
+  }
+  
+  /* Submit button styling */
+  .creation-equipe-container input[type="submit"] {
+    background-color: #ff4654;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .creation-equipe-container input[type="submit"]:hover {
+    background-color: #ff4654;
+  }
+
+  .placeholder {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Icon styling for the logo upload */
+  #team_logo {
+    margin-bottom: 20px;
+  }
+
+
+
+
+
+
+
+/* Create Team Button Styles */
+.create-team-button {
+    text-align: center;
+    margin: 50px 0;
+  }
+  
+  .create-team-button .btn {
+    background-color: #ff3c3c;
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .create-team-button .btn:hover {
+    background-color: #ff5757;
+  }
+  
+  /* Team Section Styles */
+  .equipes {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    padding: 50px 20px;
+  }
+  
+  .membre {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background-color: #0a0a0a;
+    /* width: 500px; */
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px 20px;
+  }
+  
+  
+  .membre-thumbnail img {
+    width: 100px;
+    height: 100px;
+
+  }
+  
+  .membre h1 {
+    font-size: 22px;
+    color: #ff3c3c;
+  }
+
+
+  .membre p {
+    font-size: 18px;
+
+  }
+
+  .membre-details {
+    display: flex;
+    gap: 20px;
+    /* justify-content: center; */
+  }
+  
+  
+  .membre-details h3 {
+    font-size: 18px;
+  }
+  
+  .etudiant-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+  }
+  
+  .etudiant-list li {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .equipes {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .membre {
+      width: 100%;
+    }
+  }
+
+
+
+
+
+
+
+
+
+  .edit-profile-container {
+    max-width: 400px;
+    margin-top: 100px;
+    align-items: center;
+    padding: 20px;
+    background: #111823;
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.edit-profile-container h1 {
+    text-align: center;
+    font-family: 'ValorantFont', sans-serif;
+    color: #FF4654;
+}
+
+
+.edit-profile-container label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.edit-profile-container input[type="text"],
+.edit-profile-container input[type="email"],
+.edit-profile-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+}
+
+.edit-profile-container input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: #FF4654;
+    color: #111823;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.edit-profile-container input[type="submit"]:hover {
+    background: #d73948;
+}
+
+
+
+
+
+
+/* Registration Page Styles */
+.registration-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #0a0a0a;
+    color: #ff3c3c;
+    text-align: center;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+  
+  .registration-container h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .registration-container input[type="text"],
+  .registration-container input[type="email"],
+  .registration-container input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #ff3c3c;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    box-sizing: border-box;
+  }
+  
+  .registration-container input[type="submit"] {
+    background-color: #ff3c3c;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .registration-container input[type="submit"]:hover {
+    background-color: #ff5757;
+  }
+  
+  .registration-container .social-login {
+    margin: 20px 0;
+  }
+  
+  .registration-container .social-login img {
+    width: 40px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .registration-container .social-login img:hover {
+    transform: scale(1.1);
+  }
+  
+  .registration-container .divider {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 20px 0;
+  }
+  
+
+
+
+
+
+
+
+
+  /* Footer */
+.main-footer {
+    background-color: #ff4654;
+    color: #000000;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo img {
+    width: 50px;
+}
+
+.footer-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-nav a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-nav a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #000000;
+}
+
+.footer-bottom a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: #ffffff;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo {
+        margin-bottom: 20px;
+    }
+
+    .footer-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-bottom {
+        margin-top: 15px;
+    }
+}
+
+
+
+
